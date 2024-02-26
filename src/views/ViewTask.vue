@@ -6,7 +6,6 @@
         
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
-            <!-- Ajoutez d'autres liens de navigation au besoin -->
           </ul>
           <button @click="logout" class="btn btn-outline-success">Logout</button>
         </div>
@@ -14,7 +13,6 @@
     </nav>
     <div class="container mt-4">
       <h2>Views Tâche</h2>
-      <!-- Formulaire pour modifier la tâche -->
       <form @submit.prevent="viewTask" class="mb-4">
         <div class="mb-3">
           <label for="viewtaskName" class="form-label">Nom:</label>
@@ -39,11 +37,8 @@ export default {
   name: 'ViewTask',
   
   created() {
-    // Récupérer l'index de la tâche à modifier depuis les paramètres d'URL
     const index = this.$route.params.index;
-    // Charger les données de la tâche à modifier depuis le stockage local
     const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
-    // Mettre à jour les données de la tâche à modifier
     this.viewtask = { ...tasks[index] };
   },
   methods: {

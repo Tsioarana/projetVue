@@ -1,6 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router'; // Importer les bonnes fonctions depuis vue-router
-import Login from '../views/Login.vue'; // Assurez-vous que le chemin est correct
-import Home from '../views/Home.vue'; // Assurez-vous que le chemin est correct
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Login from '../views/Login.vue'; 
+import Home from '../views/Home.vue'; 
 import EditTask from '../views/EditTask.vue';
 import ViewTask from '../views/ViewTask.vue';
 import SignUp from '@/views/SignUp.vue';
@@ -40,7 +40,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(), // Utiliser createWebHashHistory pour la navigation hash
+  history: createWebHashHistory(), 
   routes
 });
 

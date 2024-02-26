@@ -48,28 +48,21 @@ export default {
     };
   },
   created() {
-    // Charger les utilisateurs depuis le stockage local lors de la création du composant
     this.loadUsers();
   },
   methods: {
     loadUsers() {
-      // Charger les utilisateurs depuis le stockage local
       const users = JSON.parse(localStorage.getItem('users') || '[]');
       this.users = users;
     },
     deleteUser(index) {
-      // Mettre en œuvre la logique pour supprimer un utilisateur
       this.users.splice(index, 1);
       localStorage.setItem('users', JSON.stringify(this.users));
     },
     decryptPassword(encryptedPassword) {
-      // Implémenter la logique de déchiffrement du mot de passe
-      // Ceci est un exemple de déchiffrement par substitution, qui n'est pas sécurisé dans un contexte réel
-      // Dans un scénario réel, utilisez des méthodes de chiffrement sécurisées
       const decryptedPassword = encryptedPassword
         .split('')
         .map(char => {
-          // Par exemple, décalez chaque caractère ASCII de 1 vers la gauche
           return String.fromCharCode(char.charCodeAt(0) - 1);
         })
         .join('');
@@ -83,5 +76,4 @@ export default {
 </script>
 
 <style scoped>
-/* Ajoutez vos styles CSS ici */
 </style>

@@ -30,20 +30,15 @@ export default {
   },
   methods: {
     login() {
-      // Vérifiez si les identifiants sont admin/admin12
       if (this.email === 'admin@gmail.com' && this.password === 'admin12') {
-        // Redirigez vers le tableau de bord de l'administrateur
         this.$router.push('/admin-dashboard');
       } else {
-        // Sinon, vérifiez les identifiants dans le localStorage
         const users = JSON.parse(localStorage.getItem('users') || '[]');
         const user = users.find(user => user.email === this.email && user.password === this.password);
         if (user) {
-          // Authentification réussie, redirigez vers la page d'accueil
           this.$emit('authenticated');
           this.$router.push('/home');
         } else {
-          // Identifiants invalides
           this.error = 'Invalid credentials. Please try again.';
         }
       }

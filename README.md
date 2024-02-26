@@ -1,4 +1,4 @@
-# shopping
+# projetvue
 
 ## Project setup
 ```

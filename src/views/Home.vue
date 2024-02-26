@@ -7,16 +7,13 @@
         
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
-            <!-- Ajoutez d'autres liens de navigation au besoin -->
           </ul>
           <button @click="logout" class="btn btn-outline-success">Logout</button>
         </div>
       </div>
     </nav>
     
-    <!-- Contenu de la page d'accueil -->
     <div class="container mt-4">
-      <!-- Formulaire pour créer une nouvelle tâche -->
       <form @submit.prevent="addTask" class="mb-4">
         <div class="mb-3">
           <label for="taskName" class="form-label">Nom:</label>
@@ -33,7 +30,6 @@
         <button type="submit" class="btn btn-primary">Ajouter Tâche</button>
       </form>
   
-      <!-- Tableau pour afficher les tâches existantes -->
       <table class="table">
         <thead>
           <tr>

@@ -6,7 +6,6 @@
         
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
-            <!-- Ajoutez d'autres liens de navigation au besoin -->
           </ul>
           <button @click="logout" class="btn btn-outline-success">Logout</button>
         </div>
@@ -14,7 +13,6 @@
     </nav>
     <div class="container mt-4">
       <h2>Modifier Tâche</h2>
-      <!-- Formulaire pour modifier la tâche -->
       <form @submit.prevent="editTask" class="mb-4">
         <div class="mb-3">
           <label for="editTaskName" class="form-label">Nom:</label>
@@ -47,24 +45,16 @@ export default {
     };
   },
   created() {
-    // Récupérer l'index de la tâche à modifier depuis les paramètres d'URL
     const index = this.$route.params.index;
-    // Charger les données de la tâche à modifier depuis le stockage local
     const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
-    // Mettre à jour les données de la tâche à modifier
     this.editedTask = { ...tasks[index] };
   },
   methods: {
     editTask() {
-      // Récupérer l'index de la tâche à modifier depuis les paramètres d'URL
       const index = this.$route.params.index;
-      // Charger les données de toutes les tâches depuis le stockage local
       const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
-      // Mettre à jour les données de la tâche à modifier
       tasks[index] = { ...this.editedTask };
-      // Enregistrer les données mises à jour dans le stockage local
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      // Rediriger vers la page d'accueil après la modification
       this.$router.push('/home');
     },
     logout() {
